@@ -278,10 +278,20 @@ echo then >> ~/.bashrc
 echo "  source /home/pi/portsdown/scripts/startup.sh" >> ~/.bashrc
 echo fi >> ~/.bashrc
 
+echo
+echo "--------------------------------------"
+echo "----- Configure the Menu Aliases -----"
+echo "--------------------------------------"
+
+# Install the menu aliases
+echo "alias menu='/home/pi/portsdown/scripts/menu.sh'" >> /home/pi/.bash_aliases
+echo "alias rptr='/home/pi/portsdown/scripts/rptr.sh'" >> /home/pi/.bash_aliases
+echo "alias stop='/home/pi/portsdown/scripts/stop.sh'" >> /home/pi/.bash_aliases
+
 # Record Version Number
 head -c 9 /home/pi/portsdown/version_history.txt > /home/pi/portsdown/installed_version.txt
 echo -e "\n" >> /home/pi/portsdown/installed_version.txt
-head -c 9 /home/pi/portsdown/version_history.txt > /home/pi/p4ng_initial_build_log.txt
+head -c 9 /home/pi/portsdown/version_history.txt >> /home/pi/p4ng_initial_build_log.txt
 echo -e "Install script finished\n" >> /home/pi/p4ng_initial_build_log.txt
 
 cd /home/pi
